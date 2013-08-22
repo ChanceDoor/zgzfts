@@ -1,0 +1,6 @@
+<%@news.each do |n|%>
+<div>
+  <%=link_to n.title,news_path(n)%>
+  <%=n.posttime%>
+</div>
+<% end %>

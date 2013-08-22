@@ -1,0 +1,6 @@
+<%@distributions.each do |d|%>
+<div>
+  <%=link_to d.title,distribution_path(d)%>
+  <%=d.posttime%>
+</div>
+<% end %>

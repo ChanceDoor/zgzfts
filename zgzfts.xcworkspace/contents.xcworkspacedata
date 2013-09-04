@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:app"
+      name = "app">
+      <Group
+         location = "group:assets"
+         name = "assets">
+         <Group
+            location = "group:images"
+            name = "images">
+            <FileRef
+               location = "group:test.jpg">
+            </FileRef>
+            <FileRef
+               location = "group:top.jpg">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:javascripts"
+            name = "javascripts">
+            <FileRef
+               location = "group:application.js">
+            </FileRef>
+            <FileRef
+               location = "group:distributions.js.coffee">
+            </FileRef>
+            <FileRef
+               location = "group:home.js.coffee">
+            </FileRef>
+            <FileRef
+               location = "group:news.js.coffee">
+            </FileRef>
+            <FileRef
+               location = "group:notices.js.coffee">
+            </FileRef>
+            <FileRef
+               location = "group:statics.js.coffee">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:stylesheets"
+            name = "stylesheets">
+            <FileRef
+               location = "group:application.css">
+            </FileRef>
+            <FileRef
+               location = "group:bootstrap_and_overrides.css.scss">
+            </FileRef>
+            <FileRef
+               location = "group:distributions.css.scss">
+            </FileRef>
+            <FileRef
+               location = "group:home.css.scss">
+            </FileRef>
+            <FileRef
+               location = "group:news.css.scss">
+            </FileRef>
+            <FileRef
+               location = "group:notices.css.scss">
+            </FileRef>
+            <FileRef
+               location = "group:statics.css.scss">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:controllers"
+         name = "controllers">
+         <FileRef
+            location = "group:application_controller.rb">
+         </FileRef>
+         <FileRef
+            location = "group:distributions_controller.rb">
+         </FileRef>
+         <FileRef
+            location = "group:home_controller.rb">
+         </FileRef>
+         <FileRef
+            location = "group:news_controller.rb">
+         </FileRef>
+         <FileRef
+            location = "group:notices_controller.rb">
+         </FileRef>
+         <FileRef
+            location = "group:statics_controller.rb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:helpers"
+         name = "helpers">
+         <FileRef
+            location = "group:application_helper.rb">
+         </FileRef>
+         <FileRef
+            location = "group:distributions_helper.rb">
+         </FileRef>
+         <FileRef
+            location = "group:home_helper.rb">
+         </FileRef>
+         <FileRef
+            location = "group:news_helper.rb">
+         </FileRef>
+         <FileRef
+            location = "group:notices_helper.rb">
+         </FileRef>
+         <FileRef
+            location = "group:statics_helper.rb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:mailers"
+         name = "mailers">
+      </Group>
+      <Group
+         location = "group:models"
+         name = "models">
+         <FileRef
+            location = "group:admin.rb">
+         </FileRef>
+         <FileRef
+            location = "group:distribution.rb">
+         </FileRef>
+         <FileRef
+            location = "group:news.rb">
+         </FileRef>
+         <FileRef
+            location = "group:notice.rb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:views"
+         name = "views">
+         <Group
+            location = "group:devise"
+            name = "devise">
+            <Group
+               location = "group:confirmations"
+               name = "confirmations">
+               <FileRef
+                  location = "group:new.html.erb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:mailer"
+               name = "mailer">
+               <FileRef
+                  location = "group:confirmation_instructions.html.erb">
+               </FileRef>
+               <FileRef
+                  location = "group:reset_password_instructions.html.erb">
+               </FileRef>
+               <FileRef
+                  location = "group:unlock_instructions.html.erb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:passwords"
+               name = "passwords">
+               <FileRef
+                  location = "group:edit.html.erb">
+               </FileRef>
+               <FileRef
+                  location = "group:new.html.erb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:registrations"
+               name = "registrations">
+               <FileRef
+                  location = "group:edit.html.erb">
+               </FileRef>
+               <FileRef
+                  location = "group:new.html.erb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:sessions"
+               name = "sessions">
+               <FileRef
+                  location = "group:new.html.erb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:shared"
+               name = "shared">
+               <FileRef
+                  location = "group:_links.erb">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:unlocks"
+               name = "unlocks">
+               <FileRef
+                  location = "group:new.html.erb">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:distributions"
+            name = "distributions">
+            <FileRef
+               location = "group:index.html.erb">
+            </FileRef>
+            <FileRef
+               location = "group:show.html.erb">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:home"
+            name = "home">
+            <FileRef
+               location = "group:index.html.erb">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:layouts"
+            name = "layouts">
+            <FileRef
+               location = "group:_article.html.erb">
+            </FileRef>
+            <FileRef
+               location = "group:_navigation.html.erb">
+            </FileRef>
+            <FileRef
+               location = "group:application.html.erb">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:news"
+            name = "news">
+            <FileRef
+               location = "group:index.html.erb">
+            </FileRef>
+            <FileRef
+               location = "group:show.html.erb">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:notices"
+            name = "notices">
+            <FileRef
+               location = "group:index.html.erb">
+            </FileRef>
+            <FileRef
+               location = "group:show.html.erb">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:statics"
+            name = "statics">
+            <FileRef
+               location = "group:index.html">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
+   <Group
+      location = "group:config"
+      name = "config">
+      <FileRef
+         location = "group:application.rb">
+      </FileRef>
+      <FileRef
+         location = "group:boot.rb">
+      </FileRef>
+      <FileRef
+         location = "group:database.yml">
+      </FileRef>
+      <FileRef
+         location = "group:environment.rb">
+      </FileRef>
+      <Group
+         location = "group:environments"
+         name = "environments">
+         <FileRef
+            location = "group:development.rb">
+         </FileRef>
+         <FileRef
+            location = "group:production.rb">
+         </FileRef>
+         <FileRef
+            location = "group:test.rb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:initializers"
+         name = "initializers">
+         <FileRef
+            location = "group:backtrace_silencers.rb">
+         </FileRef>
+         <FileRef
+            location = "group:devise.rb">
+         </FileRef>
+         <FileRef
+            location = "group:inflections.rb">
+         </FileRef>
+         <FileRef
+            location = "group:mime_types.rb">
+         </FileRef>
+         <FileRef
+            location = "group:secret_token.rb">
+         </FileRef>
+         <FileRef
+            location = "group:session_store.rb">
+         </FileRef>
+         <FileRef
+            location = "group:wrap_parameters.rb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:locales"
+         name = "locales">
+         <FileRef
+            location = "group:devise.en.yml">
+         </FileRef>
+         <FileRef
+            location = "group:en.yml">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:routes.rb">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:config.ru">
+   </FileRef>
+   <Group
+      location = "group:db"
+      name = "db">
+      <Group
+         location = "group:migrate"
+         name = "migrate">
+         <FileRef
+            location = "group:20130822065821_devise_create_admins.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20130822081849_create_news.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20130822081906_create_notices.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20130822082006_create_distributions.rb">
+         </FileRef>
+         <FileRef
+            location = "group:20130822082007_add_name_to_admins.rb">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:schema.rb">
+      </FileRef>
+      <FileRef
+         location = "group:seeds.rb">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:development.sqlite3">
+   </FileRef>
+   <Group
+      location = "group:doc"
+      name = "doc">
+      <FileRef
+         location = "group:README_FOR_APP">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Gemfile">
+   </FileRef>
+   <FileRef
+      location = "group:Gemfile.lock">
+   </FileRef>
+   <Group
+      location = "group:lib"
+      name = "lib">
+      <Group
+         location = "group:assets"
+         name = "assets">
+      </Group>
+      <Group
+         location = "group:tasks"
+         name = "tasks">
+      </Group>
+   </Group>
+   <Group
+      location = "group:log"
+      name = "log">
+   </Group>
+   <Group
+      location = "group:public"
+      name = "public">
+      <FileRef
+         location = "group:404.html">
+      </FileRef>
+      <FileRef
+         location = "group:422.html">
+      </FileRef>
+      <FileRef
+         location = "group:500.html">
+      </FileRef>
+      <FileRef
+         location = "group:favicon.ico">
+      </FileRef>
+      <FileRef
+         location = "group:robots.txt">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:Rakefile">
+   </FileRef>
+   <FileRef
+      location = "group:README.rdoc">
+   </FileRef>
+   <Group
+      location = "group:script"
+      name = "script">
+      <FileRef
+         location = "group:rails">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:test"
+      name = "test">
+      <Group
+         location = "group:fixtures"
+         name = "fixtures">
+         <FileRef
+            location = "group:admins.yml">
+         </FileRef>
+         <FileRef
+            location = "group:distributions.yml">
+         </FileRef>
+         <FileRef
+            location = "group:news.yml">
+         </FileRef>
+         <FileRef
+            location = "group:notices.yml">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:functional"
+         name = "functional">
+         <FileRef
+            location = "group:distributions_controller_test.rb">
+         </FileRef>
+         <FileRef
+            location = "group:home_controller_test.rb">
+         </FileRef>
+         <FileRef
+            location = "group:news_controller_test.rb">
+         </FileRef>
+         <FileRef
+            location = "group:notices_controller_test.rb">
+         </FileRef>
+         <FileRef
+            location = "group:statics_controller_test.rb">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:integration"
+         name = "integration">
+      </Group>
+      <Group
+         location = "group:performance"
+         name = "performance">
+         <FileRef
+            location = "group:browsing_test.rb">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:test_helper.rb">
+      </FileRef>
+      <Group
+         location = "group:unit"
+         name = "unit">
+         <FileRef
+            location = "group:admin_test.rb">
+         </FileRef>
+         <FileRef
+            location = "group:distribution_test.rb">
+         </FileRef>
+         <Group
+            location = "group:helpers"
+            name = "helpers">
+            <FileRef
+               location = "group:distributions_helper_test.rb">
+            </FileRef>
+            <FileRef
+               location = "group:home_helper_test.rb">
+            </FileRef>
+            <FileRef
+               location = "group:news_helper_test.rb">
+            </FileRef>
+            <FileRef
+               location = "group:notices_helper_test.rb">
+            </FileRef>
+            <FileRef
+               location = "group:statics_helper_test.rb">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:news_test.rb">
+         </FileRef>
+         <FileRef
+            location = "group:notice_test.rb">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:vendor"
+      name = "vendor">
+      <Group
+         location = "group:assets"
+         name = "assets">
+         <Group
+            location = "group:javascripts"
+            name = "javascripts">
+         </Group>
+         <Group
+            location = "group:stylesheets"
+            name = "stylesheets">
+         </Group>
+      </Group>
+      <Group
+         location = "group:plugins"
+         name = "plugins">
+      </Group>
+   </Group>
+</Workspace>

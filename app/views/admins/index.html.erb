@@ -1,0 +1,30 @@
+<div class="tabbable tabs-left">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab">新闻</a></li>
+      <li><a href="#tab2" data-toggle="tab">公告</a></li>
+      <li><a href="#tab3" data-toggle="tab">经销商信息</a></li>
+      <li><a href="#tab4" data-toggle="tab">产品橱窗</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <div><%=link_to '添加',new_news_path%></div>
+       <%if @news%>
+        <% @news.each do |news|%>
+          <div><%= news.title %>|<%= news.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',news_path(news)%>|<%=link_to '修改',edit_news_path(news)%>|<%=link_to '删除',news_path(news),method: :delete,data: {confirm: '确定删除？'}%></div>
+        <% end %>
+      <%else%>
+        当前项没有条目
+      <%end%>
+      </div>
+      <div class="tab-pane" id="tab2">
+        <p>2尚未完工</p>
+      </div>
+      <div class="tab-pane" id="tab3">
+        <p>3尚未完工</p>
+      </div>
+      <div class="tab-pane" id="tab3">
+        <p>4尚未完工</p>
+      </div>
+    </div>
+</div>

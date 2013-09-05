@@ -1,6 +1,6 @@
 <%@distributions.each do |d|%>
 <div>
   <%=link_to d.title,distribution_path(d)%>
-  <%=d.posttime%>
+  <%=d.posttime.strftime("%Y-%m-%d %H:%M:%S")%>
 </div>
 <% end %>

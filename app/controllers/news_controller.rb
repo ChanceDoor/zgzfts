@@ -9,6 +9,7 @@ class NewsController < ApplicationController
  
   def new
     @news = News.new
+    render :layout => "admin"
   end
 
   def create
@@ -30,6 +31,7 @@ class NewsController < ApplicationController
 
   def edit
     @news = News.find(params[:id])
+    render :layout => 'admin'
   end
 
   def update

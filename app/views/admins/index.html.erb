@@ -9,22 +9,39 @@
     <div class="tab-content">
       <div class="tab-pane active" id="tab1">
         <div><%=link_to '添加',new_news_path%></div>
-       <%if @news%>
-        <% @news.each do |news|%>
-          <div><%= news.title %>|<%= news.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',news_path(news)%>|<%=link_to '修改',edit_news_path(news)%>|<%=link_to '删除',news_path(news),method: :delete,data: {confirm: '确定删除？'}%></div>
-        <% end %>
-      <%else%>
-        当前项没有条目
-      <%end%>
+        <%if @news%>
+          <% @news.each do |news|%>
+            <div><%= news.title %>|<%= news.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',news_path(news)%>|<%=link_to '修改',edit_news_path(news)%>|<%=link_to '删除',news_path(news),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% end %>
+        <%else%>
+          当前项没有条目
+        <%end%>
       </div>
+
       <div class="tab-pane" id="tab2">
-        <p>2尚未完工</p>
+        <div><%=link_to '添加',new_notice_path%></div>
+        <%if @notices%>
+          <% @notices.each do |notice|%>
+            <div><%= notice.title %>|<%= notice.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',notice_path(notice)%>|<%=link_to '修改',edit_notice_path(notice)%>|<%=link_to '删除',notice_path(notice),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% end %>
+        <%else%>
+          当前项没有条目
+        <%end%>
       </div>
+
       <div class="tab-pane" id="tab3">
-        <p>3尚未完工</p>
+        <div><%=link_to '添加',new_distribution_path%></div>
+        <%if @distributions%>
+          <% @distributions.each do |distribution|%>
+            <div><%= distribution.title %>|<%= distribution.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',distribution_path(distribution)%>|<%=link_to '修改',edit_distribution_path(distribution)%>|<%=link_to '删除',distribution_path(distribution),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% end %>
+        <%else%>
+          当前项没有条目
+        <%end%>
       </div>
-      <div class="tab-pane" id="tab3">
-        <p>4尚未完工</p>
+    
+      <div class="tab-pane" id="tab4">
+        coming...
       </div>
     </div>
 </div>

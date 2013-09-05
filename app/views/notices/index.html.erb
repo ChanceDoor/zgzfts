@@ -1,6 +1,6 @@
 <%@notices.each do |n|%>
 <div>
   <%=link_to n.title,notice_path(n)%>
-  <%=n.posttime%>
+  <%=n.posttime.strftime("%Y-%m-%d %H:%M:%S")%>
 </div>
 <% end %>

@@ -4,6 +4,7 @@ class AdminsController < ApplicationController
     @news = News.all
     @notices = Notice.all
     @distributions = Distribution.all
+    @books = Book.all
   end
   
   def show 

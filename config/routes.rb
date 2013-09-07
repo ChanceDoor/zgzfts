@@ -1,4 +1,5 @@
 Zgzfts::Application.routes.draw do
+  resources :books
   resources :distributions
   resources :notices
   resources :news

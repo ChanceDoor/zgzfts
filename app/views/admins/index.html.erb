@@ -41,7 +41,14 @@
       </div>
     
       <div class="tab-pane" id="tab4">
-        coming...
+        <div><%=link_to '添加',new_book_path%></div>
+        <%if @books%>
+          <% @books.each do |book|%>
+            <div><%= book.title %>|<%= book.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',book_path(book)%>|<%=link_to '修改',edit_book_path(book)%>|<%=link_to '删除',book_path(book),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% end %>
+        <%else%>
+          当前项没有条目
+        <%end%>
       </div>
     </div>
 </div>

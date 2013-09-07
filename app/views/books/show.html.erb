@@ -1,0 +1,5 @@
+<div class="container">
+  <div style="text-align:center"><h3><%=@book.title%></h3></div>
+  <div style="text-align:center"><%=@book.posttime.strftime("%Y-%m-%d %H:%M:%S")%></div>
+  <div><%=raw(@book.body)%></div>
+</div>

@@ -3,5 +3,6 @@ class HomeController < ApplicationController
     @news = News.all
     @notices = Notice.all
     @distributions = Distribution.all
+    @books = Book.all
   end
 end

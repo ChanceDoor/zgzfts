@@ -36,7 +36,7 @@ class DistributionsController < ApplicationController
 
   def update
     @distribution = Distribution.find(params[:id])
-    if @distribution.update_attributes(params[:post])
+    if @distribution.update_attributes(params[:distribution])
       redirect_to admin_root_path
     else
       render 'edit'

@@ -36,7 +36,7 @@ class NoticesController < ApplicationController
 
   def update
     @notice = Notice.find(params[:id])
-    if @notice.update_attributes(params[:post])
+    if @notice.update_attributes(params[:notice])
       redirect_to admin_root_path
     else
       render 'edit'

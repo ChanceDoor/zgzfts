@@ -1,0 +1,6 @@
+<%@books.each do |b|%>
+<div>
+  <%=link_to b.title,book_path(b)%>
+  <%=b.posttime.strftime("%Y-%m-%d %H:%M:%S")%>
+</div>
+<% end %>

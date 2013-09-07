@@ -7,19 +7,31 @@
     </ol>
     <div class="carousel-inner">
       <div class="active item">
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
+        <%for i in 0..2%>
+          <%if @books[i]%>
+            <a href="<%=book_path(@books[i])%>"><div class="book_item"><%=image_tag @books[i].cover%></div></a>
+          <%else%>
+            <div class="book_item"><%=image_tag 'test.jpg'%></div>
+          <%end%>
+        <%end%>
       </div>
       <div class="item">
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
+        <%for i in 3..5%>
+          <%if @books[i]%>
+            <a href="<%=book_path(@books[i])%>"><div class="book_item"><%=image_tag @books[i].cover%></div></a>
+          <%else%>
+            <div class="book_item"><%=image_tag 'test.jpg'%></div>
+          <%end%>
+        <%end%>
       </div>
       <div class="item">
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
-        <div class="book_item"><%=image_tag 'test.jpg'%></div>
+        <%for i in 6..8%>
+          <%if @books[i]%>
+            <a href="<%=book_path(@books[i])%>"><div class="book_item"><%=image_tag @books[i].cover%></div></a>
+          <%else%>
+            <div class="book_item"><%=image_tag 'test.jpg'%></div>
+          <%end%>
+        <%end%>
       </div>
     </div>
     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>

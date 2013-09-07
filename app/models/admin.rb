@@ -11,4 +11,5 @@ class Admin < ActiveRecord::Base
   has_many :news
   has_many :notices
   has_many :distributions
+  has_many :books
 end

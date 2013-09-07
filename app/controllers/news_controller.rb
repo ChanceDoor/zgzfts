@@ -36,7 +36,7 @@ class NewsController < ApplicationController
 
   def update
     @news = News.find(params[:id])
-    if @news.update_attributes(params[:post])
+    if @news.update_attributes(params[:news])
       redirect_to admin_root_path
     else
       render 'edit'

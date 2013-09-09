@@ -1,0 +1,28 @@
+<%= form_for @distribution do |f| %>
+  <% if @distribution.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@distribution.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @distribution.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label '标题' %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label '内容' %><br>
+    <%= f.kindeditor :body %>
+  </p>
+ 
+  <p>
+    <%= f.submit '提交'%>
+  </p>
+<% end %>
+ 
+<%= link_to '返回', admin_root_path %>

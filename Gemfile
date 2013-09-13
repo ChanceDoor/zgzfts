@@ -10,7 +10,7 @@ group :assets do
 end
 gem 'rails_kindeditor', '~> 0.4.0'
 gem 'devise'
-gem "bootstrap-sass", ">= 2.3.0.0"
+gem "bootstrap-sass", ">= 2.3.2.1"
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'

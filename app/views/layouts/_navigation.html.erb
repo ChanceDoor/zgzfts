@@ -18,3 +18,8 @@
     <%= link_to '关于我们',statics_path %>
   </li>
 </ul>
+<% if controller_name == 'books'%>
+  <ul class="nav pull-right">
+    <li><a href='#'><%=image_tag 'cart.png',:class => 'cart'%>购物车</a></li>
+  </ul>
+<% end %>

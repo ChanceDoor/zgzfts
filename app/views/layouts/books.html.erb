@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>中国政府图书网</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <div  style="display:none" class="alert alert-<%= name == :notice ? "success" : "error" %>">
+                <a class="close" data-dismiss="alert">&#215;</a>
+                <%= content_tag :div, msg, :id => "flash_#{name}" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </nav>
+</div>
+<div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+            <div><%=link_to '关于我们',statics_path%> | <a href="#myModal"   data-toggle="modal">联系我们</a> | <a href="<%=statics_path%>#tab2" >业务合作</a>  </div>
+            <div>浙ICP备11041017号-2</div>
+            <div><a href="http://www.miitbeian.gov.cn/">http://www.miitbeian.gov.cn/</a></div>
+          </footer>
+	</div>
+       <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-header"> 
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">联系方式</h3>
+       </div>
+        <div class="modal-body"> 
+	  <p>&nbsp;&nbsp; 地址：杭州拱墅区湖州街天邑国际大厦</p> 
+	  <p>&nbsp;&nbsp; 电话：0571-88609018
+	  </p>
+         </div>
+         <div class="modal-footer">
+         <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+         
+         </div>
+       </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+</body>
+</html>

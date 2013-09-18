@@ -5,11 +5,12 @@ one:
   posttime: 2013-09-06 10:12:26
   body: MyString
   cover: MyString
-  admin: 
-
+  admin: 1
+  price: 9.99
 two:
   title: MyString
   posttime: 2013-09-06 10:12:26
   body: MyString
   cover: MyString
-  admin: 
+  admin: 1 
+  price: 8.88

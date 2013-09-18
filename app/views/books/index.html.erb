@@ -1,6 +1,9 @@
-<%@books.each do |b|%>
-<div>
-  <%=link_to b.title,book_path(b)%>
-  <%=b.posttime.strftime("%Y-%m-%d %H:%M:%S")%>
+<div class="row">
+  <%@books.each do |b|%>
+    <div class="item-line pull-left">
+      <%= image_tag b.cover %> <br>
+      <%=link_to b.title,book_path(b)%><br>
+      <%= number_to_currency(b.price,:unit => '¥')%><%=link_to '放入购物车','#',:class=>'btn-cart btn btn-success'%>
+    </div>
+  <% end %>
 </div>
-<% end %>

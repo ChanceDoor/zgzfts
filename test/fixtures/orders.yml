@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  items: MyString
+  cost: 9.99
+  ordertime: 2013-09-16 05:58:31
+  status: 1
+  notice: MyString
+  deliverid: MyString
+
+two:
+  items: MyString
+  cost: 9.99
+  ordertime: 2013-09-16 05:58:31
+  status: 1
+  notice: MyString
+  deliverid: MyString

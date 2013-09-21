@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+  default_scope order:  'id desc'
   belongs_to :admin
   attr_accessible :body, :cover, :posttime, :title,:price
 

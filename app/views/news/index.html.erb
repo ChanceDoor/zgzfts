@@ -1,6 +1,18 @@
-<%@news.each do |n|%>
-<div>
-  <%=link_to n.title,news_path(n)%>
-  <%=n.posttime.strftime("%Y-%m-%d %H:%M:%S")%>
-</div>
+<TABLE class="content-table table table-striped table table-bordered table table-hover table table-condensed " cellSpacing=1 cellPadding=1>
+
+  <TBODY>
+    <tr class="bt-1 bg-wr"><th class="bg-wr" colspan="2">重要新闻</th></tr>
+    <%@news.each do |n|%>
+      <tr><td class="w80p br-n">
+	  <%=link_to n.title,news_path(n)%>
+	  <%if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+	    <%=image_tag 'new.png'%>
+	  <%end%>
+</td>
+<td class="bl-n">
+   <%=n.posttime.strftime("%Y-%m-%d")%>
+</td>
+</tr>
 <% end %>
+</TBODY></TABLE>
+

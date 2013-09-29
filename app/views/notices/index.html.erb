@@ -3,7 +3,7 @@
      <tr class="bt-1 bg-wr"><th class="bg-wr" colspan="2">公告</th></tr>
      <%@notices.each do |n|%>
        <tr><td class="w80p br-n">
-           <%=link_to n.title,news_path(n)%>
+           <%=link_to n.title,notice_path(n)%>
            <%if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
              <%=image_tag 'new.png'%>
            <%end%>

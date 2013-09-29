@@ -1,0 +1,3 @@
+class OutsourcingController < ApplicationController
+ end
+

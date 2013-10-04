@@ -8,6 +8,7 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'kaminari'
 gem 'rails_kindeditor', '~> 0.4.0'
 gem 'devise'
 gem "bootstrap-sass", ">= 2.3.2.1"

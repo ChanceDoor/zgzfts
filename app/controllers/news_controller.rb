@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   def index
-    @news = News.all
+    @news = News.page(params[:page])
   end
 
   def show

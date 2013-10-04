@@ -1,6 +1,6 @@
 class DistributionsController < ApplicationController
   def index
-    @distributions = Distribution.all
+    @distributions = Distribution.page(params[:page])
   end
   
   def show

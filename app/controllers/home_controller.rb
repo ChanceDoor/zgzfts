@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @news = News.all
-    @notices = Notice.all
-    @distributions = Distribution.all
+    @news = News.page(params[:news_page]).per(1)
+    @notices = Notice.page(params[:notices_page]).per(10)
+    @distributions = Distribution.page(params[:dis_page]).per(10)
     @books = Book.all
   end
 end

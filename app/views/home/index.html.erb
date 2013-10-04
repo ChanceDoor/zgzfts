@@ -46,11 +46,14 @@
       <div class="span2" style="padding-top:20px"><%=link_to "more",news_index_path%></div>
     </div>
     <div class="row-fluid">
-      <div class="span12"><ul>
-      <%@news.each do |n|%>
-        <li><%=link_to n.title, news_path(n)%></li>
-      <% end %>
-    </ul></div>
+      <div class="span12">
+	<ul>
+          <%@news.each do |n|%>
+            <li><%=link_to n.title, news_path(n)%></li>
+          <% end %>
+        </ul>
+      </div>
+      <div><%= paginate @news, :param_name => :news_page %></div>
     </div>
   </div>
   
@@ -60,11 +63,14 @@
       <div class="span2" style="padding-top:20px"><%=link_to "more",notices_path%></div>
     </div>
     <div class="row-fluid">
-      <div class="span12"><ul>
-      <%@notices.each do |n|%>
-        <li><%=link_to n.title, notice_path(n)%></li>
-      <% end %>
-    </ul></div>
+      <div class="span12">
+	<ul>
+          <%@notices.each do |n|%>
+            <li><%=link_to n.title, notice_path(n)%></li>
+          <% end %>
+        </ul>
+      </div>
+      <div><%= paginate @notices, :param_name => :notices_page %></div>
     </div>
   </div>
  
@@ -78,7 +84,8 @@
       <%@distributions.each do |d|%>
         <li><%=link_to d.title, distribution_path(d)%></li>
       <% end %>
-    </ul></div>
+  </ul></div>
+  <div><%= paginate @distributions, :param_name => :dis_page %></div>
     </div>
   </div>
 </div>

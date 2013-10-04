@@ -6,4 +6,5 @@
       <%= number_to_currency(b.price,:unit => '¥')%><%=link_to '放入购物车','#',:class=>'btn-cart btn btn-success'%>
     </div>
   <% end %>
+  <div><%= paginate @books,:left => 3, :right => 1 %></div>
 </div>

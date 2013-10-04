@@ -49,7 +49,12 @@
       <div class="span12">
 	<ul>
           <%@news.each do |n|%>
-            <li><%=link_to n.title, news_path(n)%></li>
+	    <li>
+	      <%=link_to n.title, news_path(n)%>
+              <%if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+	        <%=image_tag 'new.png'%>
+	      <%end%>
+	    </li>
           <% end %>
         </ul>
       </div>
@@ -66,7 +71,12 @@
       <div class="span12">
 	<ul>
           <%@notices.each do |n|%>
-            <li><%=link_to n.title, notice_path(n)%></li>
+	    <li>
+	      <%=link_to n.title, notice_path(n)%>
+	      <%if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+	        <%=image_tag 'new.png'%>
+	      <%end%>
+	    </li>
           <% end %>
         </ul>
       </div>
@@ -82,7 +92,12 @@
     <div class="row-fluid">
       <div class="span12"><ul>
       <%@distributions.each do |d|%>
-        <li><%=link_to d.title, distribution_path(d)%></li>
+	<li>
+	  <%=link_to d.title, distribution_path(d)%>
+	  <%if d.posttime.year == Time.now.year && d.posttime.month == Time.now.month && Time.now.day-d.posttime.day <= 3 %>
+	    <%=image_tag 'new.png'%>
+	  <%end%>
+	</li>
       <% end %>
   </ul></div>
   <div><%= paginate @distributions, :param_name => :dis_page %></div>

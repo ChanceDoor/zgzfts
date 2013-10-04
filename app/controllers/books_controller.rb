@@ -1,9 +1,11 @@
 class BooksController < ApplicationController
   def index
     @books = Book.page(params[:page]).per(12)
+    render :layout => "application"
   end
   def show
     @book = Book.find(params[:id])
+    render :layout => "application"
   end
 
   def new

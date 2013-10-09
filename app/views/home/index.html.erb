@@ -48,10 +48,10 @@
     <div class="row-fluid">
       <div class="span12">
 	<ul>
-          <%@news.each do |n|%>
+          <% @news.each do |n| %>
 	    <li>
-	      <%=link_to n.title, news_path(n)%>
-              <%if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+	      <%= link_to n.title, news_path(n) %>
+              <% if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
 	        <%=image_tag 'new.png'%>
 	      <%end%>
 	    </li>

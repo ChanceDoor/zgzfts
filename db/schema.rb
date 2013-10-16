@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130916095831) do
+ActiveRecord::Schema.define(:version => 20131016123409) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(:version => 20130916095831) do
   create_table "books", :force => true do |t|
     t.string   "title"
     t.datetime "posttime"
-    t.string   "body"
+    t.text     "body",       :limit => 255
     t.string   "cover"
     t.integer  "admin_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.decimal  "price"
   end
 

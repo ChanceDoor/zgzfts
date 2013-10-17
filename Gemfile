@@ -15,6 +15,7 @@ gem "bootstrap-sass", ">= 2.3.2.1"
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'newrelic_rpm'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 # Use unicorn as the app server

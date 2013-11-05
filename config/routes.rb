@@ -9,10 +9,11 @@ Zgzfts::Application.routes.draw do
   authenticated :admin do
     match "/admin", :to => 'admins#index',:as=>'admin_root'
   end
-    devise_scope :admin do
-       match "/admin" => "devise/sessions#new",:as => 'admin_root' 
-    end
-    #root :to =>'devise/sessions#new'
+
+  devise_scope :admin do
+     match "/admin" => "devise/sessions#new",:as => 'admin_root' 
+  end
+  #root :to =>'devise/sessions#new'
 
   resource :admin
   root :to => "home#index"

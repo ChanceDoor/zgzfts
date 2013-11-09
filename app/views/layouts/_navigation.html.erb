@@ -20,8 +20,8 @@
   <li>
     <%= link_to '关于我们',statics_path %>
   </li>
-  <li style="color:red">
-    <%= link_to '元法论坛', 'http://bbs.zgzfts.com'%>
+  <li>
+  <%= link_to '元法论坛', 'http://bbs.zgzfts.com',{:style=>'color:red;',:target =>'_blank'} %>
   </li>
 </ul>
 <% if controller_name == 'books'%>

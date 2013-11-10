@@ -5,7 +5,9 @@ Zgzfts::Application.routes.draw do
   resources :news
   resources :statics
   resources :outsourcing
-  resources :editors
+  resources :editors 
+  resources :posts
+  
   devise_for :admin
   authenticated :admin do
     match "/admin", :to => 'admins#index',:as=>'admin_root'

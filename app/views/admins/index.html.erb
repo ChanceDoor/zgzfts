@@ -5,6 +5,7 @@
       <li><a href="#tab3" data-toggle="tab">经销商信息</a></li>
       <li><a href="#tab4" data-toggle="tab">产品橱窗</a></li>
       <li><a href="#tab5" data-toggle="tab">编辑管理</a></li>
+      <li><a href="#tab6" data-toggle="tab">专栏文章管理</a></li>
     </ul>
 
     <div class="tab-content">
@@ -62,5 +63,17 @@
           当前项没有条目
         <%end%>
       </div>
+
+      <div class="tab-pane" id="tab6">
+        <div><%= link_to '添加',new_post_path %></div>
+        <% if @posts%>
+          <% @posts.each do |post|%>
+        <div><%= post.title %>|<%= post.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示', post_path(post) %>|<%= link_to '修改',edit_post_path(post)%>|<%=link_to '删除', editor_path(post), method: :delete, data: {confirm: '确定删除？'} %></div>
+          <% end %>
+        <%else%>
+          当前项没有条目
+        <%end%>
+      </div>
+
     </div>
 </div>

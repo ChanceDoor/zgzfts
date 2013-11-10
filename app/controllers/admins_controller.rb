@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
     @distributions = Distribution.all
     @books = Book.all
     @editors = Editor.all
+    @posts = Post.all
   end
   
   def show 

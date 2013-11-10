@@ -1,0 +1,6 @@
+<% provide(:title, '"'+ @editor.name + '"|' ) %>
+<div class="container">
+  <div style="text-align:center"><h3><%= @editor.name %></h3></div>
+  <div style="text-align:center"><%= image_tag(@editor.portrait) %></div>
+  <div><%=raw(@editor.resume)%></div>
+</div>

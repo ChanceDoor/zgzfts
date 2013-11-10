@@ -5,6 +5,7 @@ class AdminsController < ApplicationController
     @notices = Notice.all
     @distributions = Distribution.all
     @books = Book.all
+    @editors = Editor.all
   end
   
   def show 

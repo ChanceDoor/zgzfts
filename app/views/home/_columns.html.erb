@@ -1,0 +1,29 @@
+<div class="border home-blocks">
+  <div class="row-fluid" style="border-bottom:1px solid #CECECE">
+    <div class="span2" style="padding:10px">
+      <%= image_tag @editor.portrait %>
+    </div>
+    <div class="span10" style="padding-top:10px">
+      <%= link_to @posts.first.title, post_path(@posts.first.id) %>
+      <hr style="margin:0;border-bottom:1px solid #CECECE"/>
+      <%= link_to strip_tags(@posts.first.body).truncate(20), post_path(@posts.first.id)%>
+      <br />
+      <%= link_to "更多专栏", posts_path, :class => "pull-right" %>
+    </div>
+  </div>
+    <div class="row-fluid">
+      <div class="span12">
+        <ul>
+          <% @posts.each do |p| %>
+            <li>
+              <%= link_to p.title, post_path(p)%>
+              <% if p.posttime.year == Time.now.year && p.posttime.month == Time.now.month && Time.now.day-p.posttime.day <= 3 %>
+                <%= image_tag 'new.png'%>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <div><%= paginate @posts, :param_name => :posts_page %></div>
+    </div>
+</div>

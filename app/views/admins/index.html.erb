@@ -12,8 +12,8 @@
       <div class="tab-pane active" id="tab1">
         <div><%=link_to '添加',new_news_path%></div>
         <%if @news%>
-          <% @news.each do |news|%>
-            <div><%= news.title %>|<%= news.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',news_path(news)%>|<%=link_to '修改',edit_news_path(news)%>|<%=link_to '删除',news_path(news),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% @news.each_with_index do |news, i|%>
+            <div><%= i+1 %>|<%= news.title %>|<%= news.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',news_path(news)%>|<%=link_to '修改',edit_news_path(news)%>|<%=link_to '删除',news_path(news),method: :delete,data: {confirm: '确定删除？'}%></div>
           <% end %>
         <%else%>
           当前项没有条目
@@ -23,8 +23,8 @@
       <div class="tab-pane" id="tab2">
         <div><%=link_to '添加',new_notice_path%></div>
         <%if @notices%>
-          <% @notices.each do |notice|%>
-            <div><%= notice.title %>|<%= notice.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',notice_path(notice)%>|<%=link_to '修改',edit_notice_path(notice)%>|<%=link_to '删除',notice_path(notice),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% @notices.each_with_index do |notice, i|%>
+            <div><%= i+1 %>|<%= notice.title %>|<%= notice.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',notice_path(notice)%>|<%=link_to '修改',edit_notice_path(notice)%>|<%=link_to '删除',notice_path(notice),method: :delete,data: {confirm: '确定删除？'}%></div>
           <% end %>
         <%else%>
           当前项没有条目
@@ -34,19 +34,19 @@
       <div class="tab-pane" id="tab3">
         <div><%=link_to '添加',new_distribution_path%></div>
         <%if @distributions%>
-          <% @distributions.each do |distribution|%>
-            <div><%= distribution.title %>|<%= distribution.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',distribution_path(distribution)%>|<%=link_to '修改',edit_distribution_path(distribution)%>|<%=link_to '删除',distribution_path(distribution),method: :delete,data: {confirm: '确定删除？'}%></div>
+          <% @distributions.each_with_index do |distribution, i|%>
+            <div><%= i+1 %>|<%= distribution.title %>|<%= distribution.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',distribution_path(distribution)%>|<%=link_to '修改',edit_distribution_path(distribution)%>|<%=link_to '删除',distribution_path(distribution),method: :delete,data: {confirm: '确定删除？'}%></div>
           <% end %>
         <%else%>
           当前项没有条目
         <%end%>
       </div>
-    
+
       <div class="tab-pane" id="tab4">
-        <div><%=link_to '添加',new_book_path%></div>
-        <%if @books%>
-          <% @books.each do |book|%>
-            <div><%= book.title %>|<%= book.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',book_path(book)%>|<%=link_to '修改',edit_book_path(book)%>|<%=link_to '删除',book_path(book),method: :delete,data: {confirm: '确定删除？'}%></div>
+        <div><%= link_to '添加',new_book_path%></div>
+        <% if @books %>
+          <% @books.each_with_index do |book, i| %>
+            <div><%= i+1 %>|<%= book.title %>|<%= book.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示',book_path(book)%>|<%=link_to '修改',edit_book_path(book)%>|<%=link_to '删除',book_path(book),method: :delete,data: {confirm: '确定删除？'}%></div>
           <% end %>
         <%else%>
           当前项没有条目
@@ -55,9 +55,9 @@
 
       <div class="tab-pane" id="tab5">
         <div><%= link_to '添加',new_editor_path %></div>
-        <% if @editors%>
-          <% @editors.each do |editor|%>
-        <div><%= editor.name %>|<%= editor.level %>|<%=link_to '显示', editor_path(editor) %>|<%= link_to '修改',edit_editor_path(editor)%>|<%=link_to '删除', editor_path(editor), method: :delete, data: {confirm: '确定删除？'} %></div>
+        <% if @editors %>
+          <% @editors.each_with_index do |editor, i| %>
+        <div><%= i+1 %>|<%= editor.name %>|<%= editor.level %>|<%=link_to '显示', editor_path(editor) %>|<%= link_to '修改',edit_editor_path(editor)%>|<%=link_to '删除', editor_path(editor), method: :delete, data: {confirm: '确定删除？'} %></div>
           <% end %>
         <%else%>
           当前项没有条目
@@ -66,9 +66,9 @@
 
       <div class="tab-pane" id="tab6">
         <div><%= link_to '添加',new_post_path %></div>
-        <% if @posts%>
-          <% @posts.each do |post|%>
-        <div><%= post.title %>|<%= post.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示', post_path(post) %>|<%= link_to '修改',edit_post_path(post)%>|<%=link_to '删除', editor_path(post), method: :delete, data: {confirm: '确定删除？'} %></div>
+        <% if @posts %>
+          <% @posts.each_with_index do |post, i| %>
+        <div><%= i+1 %>|<%= post.title %>|<%= post.posttime.strftime("%Y-%m-%d %H:%M") %>|<%=link_to '显示', post_path(post) %>|<%= link_to '修改',edit_post_path(post)%>|<%=link_to '删除', editor_path(post), method: :delete, data: {confirm: '确定删除？'} %></div>
           <% end %>
         <%else%>
           当前项没有条目

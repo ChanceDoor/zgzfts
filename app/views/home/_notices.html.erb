@@ -1,0 +1,21 @@
+<div class="border home-blocks">
+  <div class="row-fluid" style="border-bottom:1px solid #CECECE">
+    <div class="span10" style="padding-left:10px"><h3>元法动态</h3></div>
+    <div class="span2" style="padding-top:20px"><%=link_to "more",notices_path%></div>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <ul>
+        <% @notices.each do |n| %>
+          <li>
+            <%= link_to n.title, notice_path(n)%>
+            <% if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+              <%= image_tag 'new.png'%>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <div><%= paginate @notices, :param_name => :notices_page %></div>
+</div>
+</div>

@@ -7,8 +7,8 @@
      <%@posts.each do |p|%>
        <tr>
 	 <td class="w80p br-n">
-           <%= link_to n.title, post_path(p) %>
-           <%if p.posttime.year == Time.now.year && p.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+           <%= link_to p.title, post_path(p) %>
+           <%if p.posttime.year == Time.now.year && p.posttime.month == Time.now.month && Time.now.day-p.posttime.day <= 3 %>
              <%=image_tag 'new.png'%>
            <%end%>
          </td>

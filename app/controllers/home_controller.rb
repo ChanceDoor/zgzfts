@@ -5,6 +5,6 @@ class HomeController < ApplicationController
     @distributions = Distribution.page(params[:dis_page]).per(10)
     @books = Book.all
     @posts = Post.page(params[:posts_page]).per(3)
-    @editor = Editor.find(@posts.first.editor_id)
+    @editor = @posts.first.nil? ? nil : Editor.find(@posts.first.editor_id)
   end
 end

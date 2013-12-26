@@ -1,3 +1,9 @@
-// Place all the styles related to the editors controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.editor-item-line{
+  height: 250px;
+  width: 20%;
+  margin: 2%;
+  padding: 6px;
+  -webkit-box-shadow: 5px 5px 10px;
+  text-align: center;
+}
+.editor-item-line img{max-height:77%}

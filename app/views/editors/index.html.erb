@@ -1,7 +1,7 @@
 <% provide(:title, '专栏编辑|') %>
   <div class="row">
     <% @editors.each do |e|%>
-      <div class="item-line pull-left">
+      <div class="editor-item-line pull-left">
         <%=link_to image_tag(e.portrait), editor_path(e) %><br>
         <%=link_to e.name, editor_path(e) %><br>
         <%= link_to strip_tags(e.resume).truncate(50), editor_path(e) %>

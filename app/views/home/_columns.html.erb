@@ -6,7 +6,7 @@
     <div class="span10" style="padding-top:10px">
       <%= link_to @posts.first.title, post_path(@posts.first.id) %>
       <hr style="margin:0;border-bottom:1px solid #CECECE"/>
-      <%= link_to strip_tags(@posts.first.body).truncate(20), post_path(@posts.first.id)%>
+      <%= link_to strip_tags(@posts.first.body.gsub!("&nbsp;","")).truncate(110), post_path(@posts.first.id)%>
       <br />
       <%= link_to "更多专栏", posts_path, :class => "pull-right" %>
     </div>

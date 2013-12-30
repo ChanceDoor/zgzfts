@@ -6,6 +6,7 @@ class EditorsController < ApplicationController
 
   def show
     @editor = Editor.find(params[:id])
+    @columns = @editor.posts
     render :layout => "application"
   end
 

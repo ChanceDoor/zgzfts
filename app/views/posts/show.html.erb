@@ -1,6 +1,7 @@
 <% provide( :title, "专栏|") %>
 <div class="container">
-  <div style="text-align:center"><h3><%=@post.title%></h3></div>
-  <div style="text-align:center"><%=@post.posttime.strftime("%Y-%m-%d %H:%M:%S")%></div>
-  <div><%=raw(@post.body)%></div>
+  <div style="text-align:center"><h3><%= @post.title %></h3></div>
+  <div style="text-align:center"><%= @post.editor.name %></div>
+  <div style="text-align:center"><%= @post.posttime.strftime("%Y-%m-%d %H:%M:%S") %></div>
+  <div><%= raw(@post.body) %></div>
 </div>

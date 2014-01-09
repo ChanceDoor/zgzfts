@@ -1,22 +1,24 @@
 <% provide(:title, "业务信息|") %>
 <table class="content-table table table-striped table table-bordered table table-hover table table-condensed " cellSpacing=1 cellPadding=1>
   <tbody>
-    <tr class="bt-1 bg-wr"><th class="bg-wr" colspan="2">业务信息</th></tr>
-      <%@distributions.each do |n|%>
-        <tr>
-	  <td class="w80p br-n">
-            <%=link_to n.title,distribution_path(n)%>
-            <%if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
-              <%=image_tag 'new.png'%>
-	     <%end%>
-          </td>
-          <td class="bl-n" >
-            <%=n.posttime.strftime("%Y-%m-%d")%>
-          </td>
-	</tr>
-	<tr>
-	  <td><%= paginate @distributions, :left => 3, :right => 1%></td>
-	</tr>
-      <% end %>
-    </tbody>
+    <tr class="bt-1 bg-wr">
+      <th class="bg-wr" colspan="2">业务信息</th>
+    </tr>
+    <% @distributions.each do |n| %>
+      <tr>
+	<td class="w80p br-n">
+          <%= link_to n.title, distribution_path(n) %>
+          <% if n.posttime.year == Time.now.year && n.posttime.month == Time.now.month && Time.now.day-n.posttime.day <= 3 %>
+            <%= image_tag 'new.png' %>
+	  <% end %>
+        </td>
+        <td class="bl-n" >
+          <%=n.posttime.strftime("%Y-%m-%d")%>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td><%= paginate @distributions, :left => 3, :right => 1 %></td>
+    </tr>
+  </tbody>
 </table>

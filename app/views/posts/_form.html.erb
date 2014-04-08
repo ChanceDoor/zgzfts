@@ -14,12 +14,12 @@
     <%= f.label '标题' %><br>
     <%= f.text_field :title %>
   </p>
- 
+
   <p>
     <%= f.label '内容' %><br>
     <%= f.kindeditor :body %>
   </p>
- 
+
   <p>
     <%= f.label '作者' %><br>
     <%= f.select :editor_id, options_from_collection_for_select(@editors, "id", "name") %>
@@ -29,5 +29,5 @@
     <%= f.submit '提交'%>
   </p>
 <% end %>
- 
-<%= link_to '返回', admin_root_path %>
+
+<%= link_to '返回', authenticated_root_path %>

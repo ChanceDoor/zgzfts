@@ -14,11 +14,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(params[:book])
+    @book = Book.new(book_params)
     @book.posttime = Time.now
     @book.admin_id = current_admin.id
     if @book.save
-      redirect_to admin_root_path
+      redirect_to authenticated_root_path
     else
       render 'new'
     end
@@ -31,8 +31,8 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if @book.update_attributes(params[:book])
-      redirect_to admin_root_path
+    if @book.update_attributes(book_params)
+      redirect_to authenticated_root_path
     else
       render 'edit'
     end
@@ -41,6 +41,11 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to admin_root_path
+    redirect_to authenticated_root_path
+  end
+
+  private
+  def book_params
+    params.require(:book).permit(:body, :cover, :posttime, :title, :price)
   end
 end

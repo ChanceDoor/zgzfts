@@ -13,11 +13,11 @@ class NoticesController < ApplicationController
   end
 
   def create
-    @notice = Notice.new(params[:notice])
+    @notice = Notice.new(notice_params)
     @notice.posttime = Time.now
     @notice.admin_id = current_admin.id
     if @notice.save
-      redirect_to admin_root_path
+      redirect_to authenticated_root_path
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class NoticesController < ApplicationController
   def destroy
     @notice = Notice.find(params[:id])
     @notice.destroy
-    redirect_to admin_root_path
+    redirect_to authenticated_root_path
   end
 
   def edit
@@ -36,10 +36,15 @@ class NoticesController < ApplicationController
 
   def update
     @notice = Notice.find(params[:id])
-    if @notice.update_attributes(params[:notice])
-      redirect_to admin_root_path
+    if @notice.update_attributes(notice_params)
+      redirect_to authenticated_root_path
     else
       render 'edit'
     end
+  end
+
+  private
+  def notice_params
+    params.require(:notice).permit(:body, :posttime, :title)
   end
 end

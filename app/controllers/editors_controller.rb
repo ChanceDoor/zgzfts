@@ -16,9 +16,9 @@ class EditorsController < ApplicationController
   end
 
   def create
-    @editor = Editor.new(params[:editor])
+    @editor = Editor.new(editor_params)
     if @editor.save
-      redirect_to admin_root_path
+      redirect_to authenticated_root_path
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class EditorsController < ApplicationController
   def destroy
     @editor = Editor.find(params[:id])
     @editor.destroy
-    redirect_to admin_root_path
+    redirect_to authenticated_root_path
   end
 
   def edit
@@ -37,10 +37,15 @@ class EditorsController < ApplicationController
 
   def update
     @editor = Editor.find(params[:id])
-    if @editor.update_attributes(params[:editor])
-      redirect_to admin_root_path
+    if @editor.update_attributes(editor_params)
+      redirect_to authenticated_root_path
     else
       render 'edit'
     end
+  end
+
+  private
+  def editor_params
+    params.require(:editor).permit(:name, :portrait, :resume, :level)
   end
 end

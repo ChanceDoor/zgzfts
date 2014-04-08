@@ -6,18 +6,18 @@ class NewsController < ApplicationController
   def show
     @news = News.find(params[:id])
   end
- 
+
   def new
     @news = News.new
     render :layout => "admin"
   end
 
   def create
-    @news = News.new(params[:news])
+    @news = News.new(news_params)
     @news.posttime = Time.now
     @news.admin_id = current_admin.id
     if @news.save
-      redirect_to admin_root_path
+      redirect_to authenticated_root_path
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class NewsController < ApplicationController
   def destroy
     @news = News.find(params[:id])
     @news.destroy
-    redirect_to admin_root_path
+    redirect_to authenticated_root_path
   end
 
   def edit
@@ -36,10 +36,15 @@ class NewsController < ApplicationController
 
   def update
     @news = News.find(params[:id])
-    if @news.update_attributes(params[:news])
-      redirect_to admin_root_path
+    if @news.update_attributes(news_params)
+      redirect_to authenticated_root_path
     else
       render 'edit'
     end
+  end
+
+  private
+  def news_params
+    params.require(:news).permit(:body, :posttime, :title)
   end
 end

@@ -14,10 +14,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     @post.posttime = Time.now
     if @post.save
-      redirect_to admin_root_path
+      redirect_to authenticated_root_path
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to admin_root_path
+    redirect_to authenticated_root_path
   end
 
   def edit
@@ -37,10 +37,15 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(params[:post])
-      redirect_to admin_root_path
+    if @post.update_attributes(post_params)
+      redirect_to authenticated_root_path
     else
       render 'edit'
     end
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :body, :posttime, :editor_id)
   end
 end

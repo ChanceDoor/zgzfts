@@ -1,6 +1,12 @@
 <% provide(:title, "《" + @book.title + "》|") %>
 <div class="container">
-  <div style="text-align:center"><h3><%=@book.title%></h3></div>
-  <div style="text-align:center"><%=@book.posttime.strftime("%Y-%m-%d %H:%M:%S")%></div>
-  <div><%=raw(@book.body)%></div>
+  <div style="text-align:center"><h3><%= @book.title %></h3></div>
+  <div style="text-align:center"><%= @book.posttime.strftime("%Y-%m-%d %H:%M:%S") %><span style="color: #0088cc;margin-left:4px">
+    <% if @book.url != nil %>
+      <%= link_to "购买", @book.url, target: "_blank" %>
+    <% else %>
+      <%= '此商品尚未上架' %>
+    <% end %>
+    </span></div>
+  <div><%= raw(@book.body) %></div>
 </div>

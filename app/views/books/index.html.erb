@@ -1,10 +1,15 @@
 <% provide(:title, '产品橱窗|') %>
 <div class="row">
-  <%@books.each do |b|%>
+  <% @books.each do |b| %>
     <div class="item-line pull-left">
-      <%=link_to image_tag(b.cover),book_path(b)%><br>
-      <%=link_to b.title,book_path(b)%><br>
-      <%= number_to_currency(b.price,:unit => '¥')%><%=link_to '放入购物车','#',:class=>'btn-cart btn btn-success'%>
+      <%= link_to image_tag(b.cover), book_path(b) %><br>
+      <%= link_to b.title, book_path(b) %><br>
+      <%= number_to_currency(b.price, :unit => '¥') %>
+      <% if b.url != nil %>
+        <%= link_to "购买", b.url, target: "_blank", :class=>'btn-cart btn btn-success' %>
+      <% else %>
+        <%= link_to '无货', "#", :class=>'btn-cart btn btn-success' %>
+      <% end %>
     </div>
   <% end %>
   <div><%= paginate @books,:left => 3, :right => 1 %></div>

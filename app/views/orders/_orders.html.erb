@@ -1,0 +1,63 @@
+<div class="orders-board">
+  <div class="orders-nav">
+    <div class="orders-nav-items">
+      <ul>
+        <li class="<%= "orders-selected" if action_name == "books" %>">
+          <a href=<%= books_order_path %>>
+            <div class="orders-nav-item">
+              <div class="image"><%= image_tag "orders-book.png" %></div>
+              <div class="title">书籍</div>
+            </div>
+          </a>
+        </li>
+        <li class="<%= "orders-selected" if action_name == "brochures" %>">
+          <a href=<%= brochures_order_path %>>
+            <div class="orders-nav-item">
+              <div class="image"><%= image_tag "orders-xuanchuance.png" %></div>
+              <div class="title">宣传册</div>
+            </div>
+          </a>
+        </li>
+        <li class="<%= "orders-selected" if action_name == "magazines" %>">
+          <a href=<%= magazines_order_path %>>
+            <div class="orders-nav-item">
+              <div class="image"><%= image_tag "orders-magazine.png" %></div>
+              <div class="title">杂志</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="orders-detail">
+    <form style="position:relative">
+      <div class="orders-list">
+        <div class="overview">
+          <div class="overview-content">
+            <div>请选择您要的产品细节</div>
+          </div>
+        </div>
+
+        <dl class="feature-list">
+          <dt>
+            <a href="#" class="orders-toggle">书籍类型</a>
+          </dt>
+          <dd>
+            <div class="features">
+              <div class="feature">
+                <div class="feature-content">
+                  <dl>
+                    <dt>标题</dt>
+                    <dd>详细</dd>
+                  </dl>
+                </div>
+                <img src="adsf.jpg">
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </form>
+  </div>
+</div>

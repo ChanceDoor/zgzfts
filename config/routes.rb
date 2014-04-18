@@ -8,6 +8,13 @@ Zgzfts::Application.routes.draw do
   resources :editors
   resources :posts
 
+  resource :order do
+    root to: "orders#books"
+    get "/books", to: 'orders#books', as: :books
+    get "/brochures", to: 'orders#brochures', as: :brochures
+    get "/magazines", to: 'orders#magazines', as: :magazines
+  end
+
   devise_for :admin
   #devise_for :admin
     authenticated :admin do

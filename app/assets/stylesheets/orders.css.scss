@@ -28,7 +28,9 @@ a{text-decoration:none;}
   width:100%;
   height:380px;
 }
-.overview{padding: 5px 10px 0 10px;}
+.overview{padding: 5px 10px 0 10px;height:100px;}
+.overview-content{width:600px;float:left;}
+.overview-image{float:left;margin-top:20px;}
 .feature-list > dt{
     height: 39px;
     border-top: solid #c3c3c3 1px;
@@ -53,12 +55,42 @@ a{text-decoration:none;}
     box-shadow: -1px 0 0 0 #d2d2d2,-1px 0 0 0 #e6e6e6,1px 0 0 0 #d2d2d2,2px 0 0 0 #e6e6e6,0 -1px 0 0 #e8e8e8,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
 }
 .order-info{
+    padding:4px;
     width:20%;
-    height:40px;
+    height:200px;
     position:absolute;
     right:0;
     top:0px;
-
     border-radius: 4px;
     box-shadow: -1px 0 0 0 #d2d2d2,-1px 0 0 0 #e6e6e6,1px 0 0 0 #d2d2d2,2px 0 0 0 #e6e6e6,0 -1px 0 0 #e8e8e8,0 2px 0 0 rgba(241,241,241,0.3),0 1px 0 0 #b1b1b1;
+    .order-summary{position:relative;height:100%;
+      .box-content{height:80%}
+    }
   }
+
+.features .feature {
+  padding-bottom: 10px;
+  .feature-content{
+    border:1px solid #dcdcdc;
+    float: right;
+    width: 600px;
+    margin-right: 10px;
+    background: url(customize_product_gradient.png) no-repeat 0 100%;
+    background-size: 100% 60px;
+    dl{
+      background: url(customize_product_body.png) repeat-y;
+      background-size: 100% 0px;
+      dt{margin-left:10px;}
+      input[type='checkbox']{margin: 0px 4px;}
+    }
+  }
+}
+
+.orders-contact{
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 70%;
+  min-width: 500px;
+  margin: 0 auto;
+}

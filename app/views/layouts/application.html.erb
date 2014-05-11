@@ -12,14 +12,9 @@
       <nav class="navbar-inner">
         <div class="container">
           <%= render 'layouts/navigation' %>
-          <% flash.each do |name, msg| %>
-            <% if msg.is_a?(String) %>
-              <div  style="display:none" class="alert alert-<%= name == :notice ? "success" : "error" %>">
-                <a class="close" data-dismiss="alert">&#215;</a>
-                <%= content_tag :div, msg, :id => "flash_#{name}" %>
-              </div>
-            <% end %>
-          <% end %>
+          <% flash.each do |key, value| %>
+          <div id="message" class="alert alert-<%= key %>" style="z-index:10;position:absolute;width:100%"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><%= value %></div>
+        <% end %>
         </div>
       </nav>
 </div>

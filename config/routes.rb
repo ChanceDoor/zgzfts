@@ -1,4 +1,5 @@
 Zgzfts::Application.routes.draw do
+  captcha_route
   resources :books
   resources :distributions
   resources :notices
@@ -9,11 +10,12 @@ Zgzfts::Application.routes.draw do
   resources :posts
 
   resource :order do
-    root to: "orders#books"
+    root to: "orders#books", as: :order
     get "/books", to: 'orders#books', as: :books
     get "/brochures", to: 'orders#brochures', as: :brochures
     get "/magazines", to: 'orders#magazines', as: :magazines
   end
+  resources :orders
 
   devise_for :admin
   #devise_for :admin

@@ -29,8 +29,9 @@ gem 'rails_kindeditor', '~> 0.4.0'
 group :doc do
   gem 'sdoc', require: false
 end
+gem 'easy_captcha'
+gem 'pony'
 gem 'bcrypt-ruby', '~> 3.0.1'
-
 gem 'devise', '~> 3.2.2'
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem 'newrelic_rpm'

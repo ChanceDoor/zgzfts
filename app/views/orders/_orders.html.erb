@@ -11,18 +11,18 @@
           </a>
         </li>
         <li class="<%= "orders-selected" if action_name == "brochures" %>">
-          <a href=<%= brochures_order_path %>>
+          <a href="#">
             <div class="orders-nav-item">
               <div class="image"><%= image_tag "orders-xuanchuance.png" %></div>
-              <div class="title">宣传册</div>
+              <div class="title">尽请期待</div>
             </div>
           </a>
         </li>
         <li class="<%= "orders-selected" if action_name == "magazines" %>">
-          <a href=<%= magazines_order_path %>>
+          <a href="#">
             <div class="orders-nav-item">
               <div class="image"><%= image_tag "orders-magazine.png" %></div>
-              <div class="title">杂志</div>
+              <div class="title">尽请期待</div>
             </div>
           </a>
         </li>
@@ -31,32 +31,45 @@
   </div>
 
   <div class="orders-detail">
-    <form style="position:relative">
+    <form style="position:relative" accept-charset="UTF-8" action="/orders/new" id="new_orders" method="get">
       <div class="orders-list">
         <div class="overview">
+          <div class="overview-image"><%= image_tag "orders-book.png" %></div>
           <div class="overview-content">
-            <div>请选择您要的产品细节</div>
+            <div style="border-bottom:1px solid #DADADA;width:588px;height:20px;"><h5>书籍</h5></div>
+            <div>书籍出版需要根据书籍类型选择合适的开本、版式、风格，如果需要正式出版则必须选择一家出版社以及通过出版社许可的印刷厂，进入制作阶段，需要进行装帧设计、纸张选择、排版、审稿校对、打印样书，最终付梓印刷并进行销售。</div>
           </div>
         </div>
 
         <dl class="feature-list">
           <dt>
-            <a href="#" class="orders-toggle">书籍类型</a>
+            <a href="javascript:void(0)" class="orders-toggle">书籍类产品</a>
           </dt>
           <dd>
             <div class="features">
               <div class="feature">
                 <div class="feature-content">
                   <dl>
-                    <dt>标题</dt>
-                    <dd>详细</dd>
-                  </dl>
+                    <dt>图志系列<input name="product[type]" id="book1" type="checkbox" value="tuzhi"></dt>
+                    <dd class="feature-overview">图志系列为我司最新推出的产品，面向各单位、企业，尤其是正逢周年庆的客户，提供高品质的专业志书服务，将单位、企业的荣誉事迹传承下去。</dd>
+                    <dd class="feature-detail">
+                      <%= link_to "了解更多", "#" %>
+                    </dd>
                 </div>
-                <img src="adsf.jpg">
+                <%= image_tag "book1.jpg" %>
               </div>
             </div>
           </dd>
         </dl>
+      </div>
+      <div class="order-info">
+        <div class="order-summary">
+            <!--<div class="title-bar">总计</div>-->
+          <div class="box-content">您选择了：图志系列</div>
+          <div style="text-align:center">
+            <input class="btn btn-primary" name="commit" type="submit" value="提交" style="width:80%">
+          </div>
+        </div>
       </div>
     </form>
   </div>

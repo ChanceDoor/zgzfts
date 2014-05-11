@@ -1,0 +1,23 @@
+<div class="orders-contact">
+  <div> 您选择的产品：<%= "图志" if !@product.nil? && @product[:type]== "tuzhi" %></div>
+  <div>
+    请输入您的联系方式，我们会及时与您联系进行进一步详谈。
+    <%= form_tag "/order", method: :post do %>
+      <input type="hidden" name="order[product][type]" value="<%= @product[:type] if !@product.nil?%>">
+      <label>联系电话：</label>
+      <input id="order_phone" name="order[contact][phone]" type="tel">
+      <label>邮箱：</label>
+      <input id="order_email" name="order[contact][email]" type="email">
+      <label>QQ：</label>
+      <input id="order_qq" name="order[contact][qq]" type="tel">
+      <label>姓名：</label>
+      <input id="order_name" name="order[contact][name]" type="text"><br />
+      <% if request.post? %>
+       <p>验证码<%= valid_captcha?(params[:captcha]) ? '正确' : '错误' %></p>
+      <% end %>
+      <p><%= captcha_tag %></p>
+      <p><%= text_field_tag :captcha, nil, placeholder: "请输入验证码" %></p>
+      <input class="btn btn-primary" name="commit" type="submit" value="提交">
+    <% end %>
+  </div>
+</div>

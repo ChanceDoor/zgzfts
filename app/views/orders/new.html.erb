@@ -15,7 +15,7 @@
       <% if request.post? %>
        <p>验证码<%= valid_captcha?(params[:captcha]) ? '正确' : '错误' %></p>
       <% end %>
-      <p><%= captcha_tag %></p>
+      <p><%= captcha_tag %><a id="refresh_captcha" herf="javascript:void(0)" style="cursor:pointer">换一个验证码</a></p>
       <p><%= text_field_tag :captcha, nil, placeholder: "请输入验证码" %></p>
       <input class="btn btn-primary" name="commit" type="submit" value="提交">
     <% end %>

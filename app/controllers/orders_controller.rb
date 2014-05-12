@@ -9,8 +9,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    puts params[:order][:product]
-    puts  params[:order][:contact]
     if captcha_valid? params[:captcha]
       require 'pony'
       Pony.mail(

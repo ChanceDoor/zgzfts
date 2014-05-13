@@ -10,22 +10,12 @@ class OrdersController < ApplicationController
 
   def create
     if captcha_valid? params[:captcha]
-      require 'pony'
-      Pony.mail(
-        :from => "cd19900419@gmail.com",
-        :to => "cd19900419@hotmail.com",
-        :subject => "元法图书网：您有新的订单",
-        :body => "产品：#{params[:order][:product]} \n 联系人姓名：#{ params[:order][:contact][:name] }\n联系人电话：#{ params[:order][:contact][:phone]}\n联系人QQ：#{params[:order][:contact][:name]}\n联系人邮箱：#{ params[:order][:contact][:email] }\n订单时间：#{ Time.now.strftime("%Y-%M-%D %h:%m:%s")}",
-      :via => :smtp,
-      :via_options => {
-        :address              => 'smtp.gmail.com',
-        :port                 => '587',
-        :enable_starttls_auto => true,
-        :user_name            => 'cd19900419@gmail.com',
-        :password             => 'change_to_password',
-        :authentication       => :plain,
-        :domain               => 'localhost.localdomain'
-      })
+      order = Order.new(order_params)
+      if order.save
+      else
+        p "===wrong"
+      end
+      order.delay(queue: 'orders').send_order
       flash[:success] = "订单已提交，请等待我们联系您。"
       redirect_to order_order_path
     else
@@ -44,4 +34,9 @@ class OrdersController < ApplicationController
   def magazines
     render books
   end
+
+  private
+    def order_params
+      params.require(:order).permit(:name, :phone, :product_type, :qq, :email, :created_at, :updated_at)
+    end
 end

@@ -30,6 +30,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 gem 'easy_captcha'
+gem 'daemons'
+gem 'delayed_job_active_record'
 gem 'pony'
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'devise', '~> 3.2.2'

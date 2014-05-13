@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408105345) do
+ActiveRecord::Schema.define(version: 20140513131715) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -52,6 +52,22 @@ ActiveRecord::Schema.define(version: 20140408105345) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "distributions", force: true do |t|
     t.string   "title"
@@ -98,14 +114,13 @@ ActiveRecord::Schema.define(version: 20140408105345) do
   add_index "notices", ["admin_id"], name: "index_notices_on_admin_id"
 
   create_table "orders", force: true do |t|
-    t.string   "items"
-    t.decimal  "cost"
-    t.datetime "ordertime"
-    t.integer  "status"
-    t.string   "notice"
-    t.string   "deliverid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "product_type"
+    t.string   "phone"
+    t.string   "name"
+    t.string   "email"
+    t.string   "qq"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|

@@ -3,15 +3,15 @@
   <div>
     请输入您的联系方式，我们会及时与您联系进行进一步详谈。
     <%= form_tag "/order", method: :post do %>
-      <input type="hidden" name="order[product][type]" value="<%= @product[:type] if !@product.nil?%>">
+      <input type="hidden" name="order[product_type]" value="<%= @product[:type] if !@product.nil?%>">
       <label>联系电话：</label>
-      <input id="order_phone" name="order[contact][phone]" type="tel">
+      <input id="order_phone" name="order[phone]" type="tel">
       <label>邮箱：</label>
-      <input id="order_email" name="order[contact][email]" type="email">
+      <input id="order_email" name="order[email]" type="email">
       <label>QQ：</label>
-      <input id="order_qq" name="order[contact][qq]" type="tel">
+      <input id="order_qq" name="order[qq]" type="tel">
       <label>姓名：</label>
-      <input id="order_name" name="order[contact][name]" type="text"><br />
+      <input id="order_name" name="order[name]" type="text"><br />
       <% if request.post? %>
        <p>验证码<%= valid_captcha?(params[:captcha]) ? '正确' : '错误' %></p>
       <% end %>
